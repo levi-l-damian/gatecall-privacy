@@ -117,7 +117,10 @@ GateCall uses Android platform security features and local device storage protec
 
 This Privacy Policy may be updated when GateCall's functionality or data practices change. The last-updated date at the top identifies the current revision.
 
+
 ## Contact
 
 Developer: Liviu Damian  
-Application: GateCall
+Application: GateCall  
+Support email: levi.l.damian@gmail.com
+

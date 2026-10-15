@@ -1,3 +1,4 @@
+
 # GateCall Privacy Policy
 
 Last updated: 2026-10-15
@@ -6,7 +7,7 @@ Last updated: 2026-10-15
 
 GateCall is an Android application providing whitelist-first call protection and SMS/MMS messaging. It is designed to reduce unwanted calls, spam calls, robocalls, and unknown caller interruptions while allowing users to manage text and multimedia messages.
 
-GateCall follows a local-first privacy model. Its application data, including its SQLite databases, is stored on the user's device rather than in a GateCall-operated cloud service.
+GateCall follows a local-first privacy model. Its application data is stored locally on the user's device rather than in a GateCall-operated cloud service.
 
 ## Information GateCall Accesses
 
@@ -34,7 +35,7 @@ GateCall uses this information to:
 
 ## Local Processing and Storage
 
-GateCall processes and stores its call-protection and messaging information locally on the Android device, including in local SQLite databases where applicable.
+GateCall processes and stores its call-protection and messaging information locally on the Android device.
 
 GateCall does not use Firebase, Supabase, or a GateCall-operated cloud service to store or synchronize contacts, blocked numbers, call activity, SMS/MMS content, or attachments.
 

@@ -1,6 +1,6 @@
 # GateCall Privacy Policy
 
-Last updated: 2026-10-31
+Last updated: 2026-11-07
 
 ## Developer and contact
 
@@ -10,15 +10,23 @@ Published policy: https://levi-l-damian.github.io/gatecall-privacy/PRIVACY_POLIC
 
 ## Scope
 
-This policy describes GateCall 1.1 Free for Android: a calls-only application. GateCall has no accounts, advertisements, purchases, subscriptions, SMS/MMS features or external unwanted-call reporting. No registration is required.
+This policy describes GateCall Phoenix V1.3 call and SMS/MMS protection. Messaging is optional and requires you to choose GateCall as your default SMS app. GateCall has no accounts, advertisements, purchases, subscriptions or external unwanted-call reporting. No registration is required. GateCall does not provide native RCS messaging or import RCS chats.
 
 ## Information accessed and its purpose
 
-With your Contacts permission, GateCall reads contact names and telephone numbers to display Approved Contacts, identify callers and help you select numbers to block. GateCall does not add, edit or delete Android Contacts and does not maintain a separate persistent copy of your contact list.
+With your Contacts permission, GateCall reads contact names and telephone numbers to display Approved Contacts, identify callers and message senders, and help you select recipients and numbers to block. Selected names and numbers may be retained in local conversations; GateCall does not copy your entire contact list into a separate address book.
+
+Trust conversation and Block conversation also require Contacts write access. Trust ensures the number is in Android Contacts, includes it in Approved Contacts, removes its block and moves its conversation to Inbox. Block removes the matching telephone number from editable Android Contacts, excludes it from Approved Contacts, blocks calls and moves the conversation to Blocked. Other telephone numbers and contact details are preserved. Restricted contacts may need to be edited in their source account. These actions affect both calls and messages. Android or your contact-account provider may synchronize changes under that account's settings; GateCall does not operate a contact-sync server.
 
 Android supplies incoming-call metadata, including the available caller ID and call timing, to GateCall's authorized call-screening service. When protection is on, GateCall checks explicitly blocked numbers before allowing saved contacts; unknown callers are rejected within Android's supported capabilities. Screening operates when the app is not open. Emergency safeguards apply. Android does not provide private or unavailable caller IDs for screening, and carrier voicemail remains outside GateCall's control.
 
 GateCall stores your explicit blocked numbers, recorded blocked-call events (number, time and screening reason), local suspected-scam labels, and application preferences on your device. These support call protection, caller details, repeat-attempt history and Home counters. A recorded screening decision is not independent proof that a carrier disconnected a call.
+
+## Protection control and notifications
+
+GateCall opens directly to Home. New installations start with protection off; updates preserve your saved choice. The Home switch controls call filtering and automatic SMS/MMS filtering. Turning protection off allows ordinary communications to continue without deleting history or changing your saved blocked numbers or trust decisions. Messages received while protection is off are not later placed in Blocked merely because processing finishes after protection is turned on.
+
+This V1.3 build does not post blocked-call notifications. Blocked-call records remain available inside GateCall. Essential message notifications remain available with your Android authorization; denying notifications does not disable available call protection or delete message history. Android notification settings remain under your control.
 
 ## Local suspected-scam labels
 
@@ -30,9 +38,19 @@ GateCall processes its call-protection data locally. The app does not transmit c
 
 If you choose to email support, the email service processes your message and the developer receives the information you include. Support correspondence is used to address your request, is not linked to an in-app account, and may be kept while needed to resolve the matter or meet applicable obligations. You may request its deletion by email, subject to those obligations. Visiting the published policy uses your browser and GitHub Pages; those services handle web requests under their own privacy terms. Reading the policy inside GateCall works offline and makes no web request.
 
+## Optional SMS/MMS messaging
+
+As your default SMS app, GateCall receives messages in the background and stores conversation text, sender/recipient details, timestamps, status and attachments locally. Android's shared message provider also holds received SMS and outgoing SMS/MMS, including outgoing attachments, so other default messaging apps can read those records. With Protection on, unknown or blocked message senders are routed to Blocked. Contact names may be cached in memory for conversation display; selected names may also be stored with conversations.
+
+Import existing messages requires a separate confirmation. It copies supported sent and received SMS/MMS history, numbers, dates, subjects and available attachments from Android's message storage into GateCall's local conversations and private attachment storage. Recognized duplicates are skipped; existing text and trust/block choices are preserved. Missing or damaged attachments may be repaired and pending send statuses may be updated. Newly imported incoming messages follow Protection; when Protection is on, eligible unknown numbers are also added to Blocked Numbers and can therefore affect call filtering. Import does not edit Contacts or delete the source history. RCS chats and unsupported records are not imported.
+
+Sending and receiving SMS/MMS uses your carrier, subject to its charges, connectivity and attachment limits. Message text, sender/recipient numbers and outgoing attachments are transmitted through carrier services to the intended recipients. SMS/MMS is not end-to-end encrypted by GateCall. GateCall does not send message history to the developer. If you explicitly open, save, email or share an attachment, the selected destination receives that content. Message notifications have their own Android channel and may display sender details on the lock screen, subject to your Android settings.
+
+App-private message data is removed when you clear app storage or uninstall. Android provider records and copies you explicitly saved or shared are managed separately. Incoming MMS still uses GateCall’s private conversation storage. Outgoing provider updates pause if GateCall loses the default SMS role and resume when it regains that role. A pending or unconfirmed send is not proof of recipient delivery. Compatibility with replacement messaging apps is subject to device acceptance testing.
+
 ## Permissions and Android settings
 
-Contacts permission is used only for the local functions described above. You may revoke it in Android Settings. Without Contacts permission, GateCall does not query or use cached Contacts data and continues rejecting callers Android supplies when protection is on. Android may bypass screening for saved contacts in this state, so explicit blocks against saved contacts cannot be guaranteed. Home and Settings display limited protection and offer a way to restore permission. Full contact-based protection resumes after permission is restored. If a Contacts lookup fails or exceeds its bounded deadline, a delivered caller is rejected with the lookup limitation recorded; a failed lookup is not proof that the number is absent from Contacts. Android's call-screening authorization is required to screen calls. GateCall does not request SMS or Android Call Log access; its Blocked Calls list contains its own screening records.
+Contacts permission is used only for the local functions described above. You may revoke it in Android Settings. Without Contacts permission, GateCall does not query or use cached Contacts data and continues rejecting callers Android supplies when protection is on. Android may bypass screening for saved contacts in this state, so explicit blocks against saved contacts cannot be guaranteed. Home displays limited protection and offers the next required authorization action. Information shows operational readiness. Full contact-based protection resumes after permission is restored. If a Contacts lookup fails or exceeds its bounded deadline, a delivered caller is rejected with the lookup limitation recorded; a failed lookup is not proof that the number is absent from Contacts. Android's call-screening authorization is required to screen calls. GateCall does not request Android Call Log access; its Blocked Calls list contains its own screening records. When you enable messaging, SMS/MMS permissions allow receiving, sending and reading messages, and phone-state access supports carrier/SIM configuration. Messaging access stops when GateCall is no longer the default SMS app.
 
 GateCall can display Android's battery-optimization status and open ordinary Android battery settings at your request. It does not request a direct battery-optimization exemption. Battery status alone does not establish whether a call was screened successfully.
 
@@ -40,13 +58,13 @@ GateCall can display Android's battery-optimization status and open ordinary And
 
 Blocked-call history retains up to the latest 500 recorded events. Older events are removed as new records exceed that limit. You can clear this history in Blocked; doing so does not remove explicit blocks or scam labels.
 
-Explicit blocks and local scam labels remain until you remove them. Preferences remain until changed or app storage is removed. Turning protection off does not erase any of these records. Removing a block or scam label does not delete Android Contacts or historical call events.
+Explicit blocks and local scam labels remain until you remove them. Preferences remain until changed or app storage is removed. Turning protection off does not erase any of these records. Removing a block or scam label does not delete historical call events. The conversation Trust/Block actions edit Contacts as described above.
 
 Uninstalling GateCall or clearing its Android app storage removes the app's local records and preferences. These actions are optional and are not required to install an ordinary compatible update. The developer has no server copy of this local data to retrieve or delete remotely.
 
 ## Backup and device transfer
 
-GateCall 1.1 is configured to exclude its private data from Android cloud backups and Android device-to-device transfer using backup exclusions for supported Android versions. This configuration does not delete records already stored in the installed app. Ordinary compatible app updates preserve local data.
+GateCall V1.3 is configured to exclude its private data, including private messages and attachments, from Android cloud backups and Android device-to-device transfer using backup exclusions for supported Android versions. This configuration does not delete records already stored in the installed app. Ordinary compatible app updates preserve local data.
 
 Automatic restoration of GateCall records after uninstalling, resetting or moving to another device is not provided. These settings do not retroactively erase backups created by earlier versions. Older backups are managed through the device or backup provider. Manufacturer-specific transfer tools may behave differently; GateCall cannot guarantee the behavior of tools that do not honor Android's exclusions. Android Contacts and their separate account backup settings are outside GateCall's control.
 
@@ -56,4 +74,4 @@ GateCall uses Android app-private storage and platform access controls. Caller n
 
 ## Policy changes
 
-Material changes to GateCall's data handling will be reflected in this policy and relevant in-app disclosures. The current policy is available offline in Settings and at the published URL above.
+Material changes to GateCall's data handling will be reflected in this policy and relevant in-app disclosures. A policy copy is bundled with the app for offline reading in Information. The latest public policy is available at the published URL above; an older installed version may contain an earlier copy.
